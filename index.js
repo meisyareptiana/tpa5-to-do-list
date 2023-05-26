@@ -265,6 +265,12 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
+// Menghapus semua todo
+app.delete("/todos", (req, res) => {
+  todos = [];
+  res.json({ message: "Semua data todo berhasil dihapus" });
+});
+
 app.listen(port, () => {
   console.log(`This Application Run on Port : ${port}`);
 });
